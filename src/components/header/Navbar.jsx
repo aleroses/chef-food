@@ -7,6 +7,7 @@ import {
   Box,
   Button,
   TextField,
+  InputAdornment,
 } from "@mui/material";
 import { NavListDrawer } from "./NavListDrawer";
 import {
@@ -18,6 +19,7 @@ import {
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import { useState } from "react";
+import { SearchInput } from "./SearchInput";
 
 const navLinks = [
   {
@@ -49,6 +51,17 @@ const navLinks = [
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    // Lógica de búsqueda aquí
+    console.log("Buscar:", searchValue);
+  };
 
   return (
     <>
@@ -60,21 +73,21 @@ export const Navbar = () => {
             aria-label=""
             onClick={() => setOpen(true)}
             sx={{
-              display: { xs: "flex", sm: "none" },
+              display: { xs: "flex", md: "none" },
             }}
           >
             <MenuIcon />
           </IconButton>
           <RestaurantMenuIcon
             sx={{
-              display: { xs: "none", sm: "flex" },
+              display: { xs: "none", md: "flex" },
             }}
           />
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Chef Food
           </Typography>
           <Box
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ display: { xs: "none", md: "block" } }}
           >
             {navLinks.map((item) => (
               <Button
@@ -87,6 +100,16 @@ export const Navbar = () => {
               </Button>
             ))}
           </Box>
+
+          <SearchInput
+            value={searchValue}
+            onChange={handleSearchChange}
+            onSubmit={handleSearchSubmit}
+            sx={{
+              display: { xs: "none", md: "block" },
+              ml: 1,
+            }}
+          />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -96,14 +119,19 @@ export const Navbar = () => {
         sx={{
           display: {
             xs: "flex",
-            sm: "none",
+            md: "none",
           },
           "& .MuiDrawer-paper": {
             backgroundColor: "secondary.main",
           },
         }}
       >
-        <NavListDrawer navLinks={navLinks} />
+        <NavListDrawer
+          navLinks={navLinks}
+          searchValue={searchValue}
+          onSearchChange={handleSearchChange}
+          onSearchSubmit={handleSearchSubmit}
+        />
       </Drawer>
     </>
   );

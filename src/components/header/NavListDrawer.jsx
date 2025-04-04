@@ -3,7 +3,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   TextField,
   InputAdornment,
@@ -12,8 +11,14 @@ import {
   Restaurant as RestIcon,
   Search as SearchIcon,
 } from "@mui/icons-material";
+import { SearchInput } from "./SearchInput";
 
-export const NavListDrawer = ({ navLinks }) => {
+export const NavListDrawer = ({
+  navLinks,
+  searchValue,
+  onSearchChange,
+  onSearchSubmit,
+}) => {
   return (
     <Box sx={{ width: 250 }}>
       <nav>
@@ -25,36 +30,23 @@ export const NavListDrawer = ({ navLinks }) => {
                 href={item.path}
               >
                 {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
-                <ListItemText>{item.title}</ListItemText>
+                <ListItemText
+                  sx={{ color: "primary.text" }}
+                >
+                  {item.title}
+                </ListItemText>
               </ListItemButton>
             </ListItem>
           ))}
-          <Box
-            component="form"
-            autoComplete="off"
-            // onSubmit={{}}
-            sx={{ /* display: "grid", gap: 2 */ p: 2 }}
-          >
-            <TextField
-              id=""
-              label=""
-              variant="outlined"
-              size="small"
-              fullWidth
-              placeholder="Search item"
-              // value={{}}
-              // onChange={{}}
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  ),
-                },
-              }}
-            />
-          </Box>
+          <SearchInput
+            value={searchValue}
+            onChange={onSearchChange}
+            onSubmit={onSearchSubmit}
+            sx={{
+              // display: { md: "none" },
+              p: 2,
+            }}
+          />
         </List>
       </nav>
     </Box>

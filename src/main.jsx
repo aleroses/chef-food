@@ -19,9 +19,13 @@ const theme = createTheme({
     mode: "light",
     primary: {
       main: "#090b10",
+      text: "#fff",
     },
     secondary: {
       main: "#0f111a",
+    },
+    focus: {
+      main: "#4f46e5",
     },
   },
 });
