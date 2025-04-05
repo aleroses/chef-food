@@ -4,13 +4,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  TextField,
-  InputAdornment,
 } from "@mui/material";
-import {
-  Restaurant as RestIcon,
-  Search as SearchIcon,
-} from "@mui/icons-material";
 import { SearchInput } from "./SearchInput";
 
 export const NavListDrawer = ({
@@ -20,7 +14,16 @@ export const NavListDrawer = ({
   onSearchSubmit,
 }) => {
   return (
-    <Box sx={{ width: 250 }}>
+    <Box
+      sx={{
+        width: 250,
+        // height: "100%",
+        // display: "flex",
+        // alignItems: "center",
+        // justifyContent: "center"
+        // backgroundColor: "primary.main",
+      }}
+    >
       <nav>
         <List>
           {navLinks.map((item) => (
@@ -28,10 +31,20 @@ export const NavListDrawer = ({
               <ListItemButton
                 component="a"
                 href={item.path}
+                sx={{
+                  "&:hover, &:focus": {
+                    bgcolor: "primary.main",
+                    opacity: 0.9,
+                  },
+                }}
               >
                 {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
                 <ListItemText
-                  sx={{ color: "primary.text" }}
+                  sx={{
+                    // display: "flex",
+                    // justifyContent: "center",
+                    color: "primary.text",
+                  }}
                 >
                   {item.title}
                 </ListItemText>

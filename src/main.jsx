@@ -27,6 +27,10 @@ const theme = createTheme({
     focus: {
       main: "#4f46e5",
     },
+    text: {
+      primary: "#000",
+      secondary: "#9facbe",
+    },
   },
 });
 

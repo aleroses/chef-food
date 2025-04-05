@@ -6,14 +6,14 @@ import {
   Typography,
   Box,
   Button,
-  TextField,
-  InputAdornment,
+  Badge,
 } from "@mui/material";
 import { NavListDrawer } from "./NavListDrawer";
 import {
   Menu as MenuIcon,
   RestaurantMenu as RestaurantMenuIcon,
   Search as SearchIcon,
+  ShoppingCart as ShoppingCartIcon,
 } from "@mui/icons-material";
 
 import InboxIcon from "@mui/icons-material/Inbox";
@@ -95,6 +95,13 @@ export const Navbar = () => {
                 component="a"
                 href={item.path}
                 color="inherit"
+                sx={{
+                  "&:hover, &:focus": {
+                    bgcolor: "secondary.main",
+                    color: "text.secondary",
+                    opacity: 0.9,
+                  },
+                }}
               >
                 {item.title}
               </Button>
@@ -110,6 +117,22 @@ export const Navbar = () => {
               ml: 1,
             }}
           />
+
+          <Badge
+            badgeContent={4}
+            color="secondary"
+            sx={{
+              ml: 2,
+              "& .MuiBadge-badge": {
+                right: -3,
+                top: 3,
+                border: `1px solid`,
+                padding: "0 4px",
+              },
+            }}
+          >
+            <ShoppingCartIcon />
+          </Badge>
         </Toolbar>
       </AppBar>
       <Drawer
