@@ -43,8 +43,8 @@ export const HeroSlider = () => {
 
         overflow: "hidden",
         mt: 2,
+        // borderRadius: "1rem",
         // bgcolor: "red",
-        borderRadius: "1rem",
       }}
     >
       <Box
@@ -66,7 +66,7 @@ export const HeroSlider = () => {
               height: "100%",
               // bgcolor: "yellow",
 
-              flexShrink: 0,
+              // flexShrink: 0,
             }}
           >
             <Card
@@ -129,7 +129,7 @@ export const HeroSlider = () => {
                       bgcolor: "primary.main",
                       color: "text.secondary",
                       "&:hover": {
-                        bgcolor: "secondary.dark",
+                        bgcolor: "secondary.main",
                       },
                       // p: 1,
                     }}
