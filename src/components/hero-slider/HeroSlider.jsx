@@ -11,6 +11,7 @@ import {
 
 import { sliderData } from "../../assets/fake-data/slider";
 import { ChevronIcon } from "./ChevronIcon";
+import { NavigationDots } from "./NavigationDots";
 
 export const HeroSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -173,33 +174,10 @@ export const HeroSlider = () => {
         index={setCurrentIndex}
       />
 
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: 24,
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          gap: 1,
-        }}
-      >
-        {sliderData.map((_, index) => (
-          <Box
-            key={index}
-            onClick={() => goToSlide(index)}
-            sx={{
-              width: 10,
-              height: 10,
-              borderRadius: "50%",
-              bgcolor:
-                currentIndex === index
-                  ? "primary.main"
-                  : "grey.400",
-              cursor: "pointer",
-            }}
-          />
-        ))}
-      </Box>
+      <NavigationDots
+        currentIndex={currentIndex}
+        goToSlide={goToSlide}
+      />
     </Box>
   );
 };
