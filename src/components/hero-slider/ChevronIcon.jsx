@@ -40,6 +40,7 @@ export const ChevronIcon = ({
         // transform: "translateY(-50%)",
         zIndex: 1,
         bgcolor: {
+          xs: "rgba(255, 255, 255, 0.025)",
           sm: "rgba(255, 255, 255, 0.2)",
         },
         transition: "all 0.3s ease-in-out",
@@ -73,9 +74,25 @@ export const ChevronIcon = ({
       }}
     >
       {action === "prev" ? (
-        <ChevronLeftIcon fontSize="large" />
+        <ChevronLeftIcon
+          sx={{
+            fontSize: {
+              xs: "1.5rem",
+              sm: "2.0rem",
+              md: "2.5rem",
+            },
+          }}
+        />
       ) : (
-        <ChevronRightIcon fontSize="large" />
+        <ChevronRightIcon
+          sx={{
+            fontSize: {
+              xs: "1.5rem",
+              sm: "2.0rem",
+              md: "2.5rem",
+            },
+          }}
+        />
       )}
     </IconButton>
   );
