@@ -20,13 +20,20 @@ export const HeroSlider = () => {
   useEffect(() => {
     if (!autoPlay) return;
 
+    console.log("ejecutando...");
+
     const interval = setInterval(() => {
+      console.log("Interval activo");
       setCurrentIndex((prev) =>
         prev === sliderData.length - 1 ? 0 : prev + 1
       );
     }, 3000);
 
-    return () => clearInterval(interval);
+    return () => {
+      // Cada vez que se actualiza autoPlay, se limpia el intervalo anterior y se crea uno nuevo (si aplica).
+      console.log("Limpiando interval...");
+      clearInterval(interval);
+    };
   }, [autoPlay]);
 
   const goToSlide = (index) => {
@@ -66,7 +73,6 @@ export const HeroSlider = () => {
               width: `${100 / sliderData.length}%`,
               height: "100%",
               // bgcolor: "yellow",
-
               // flexShrink: 0,
             }}
           >
@@ -90,9 +96,6 @@ export const HeroSlider = () => {
                   display: "flex",
                   justifyContent: "space-evenly",
                   flexDirection: "column",
-                  // gap: 2,
-                  // p: 0,
-                  // m: 0,
                 }}
               >
                 <CardContent
@@ -100,8 +103,8 @@ export const HeroSlider = () => {
                     width: "100%",
                     height: "auto",
                     minHeight: "50%",
-                    // flex: "1 0 auto",
                     p: [0, 2, 2],
+                    // flex: "1 0 auto",
                     // bgcolor: "red",
                   }}
                 >
@@ -132,7 +135,6 @@ export const HeroSlider = () => {
                       "&:hover": {
                         bgcolor: "secondary.main",
                       },
-                      // p: 1,
                     }}
                   >
                     Explore Food
@@ -151,7 +153,6 @@ export const HeroSlider = () => {
                     xs: "none",
                     md: "flex",
                   },
-
                   alignSelf: "center",
                   objectFit: "cover",
                 }}
@@ -164,14 +165,14 @@ export const HeroSlider = () => {
       <ChevronIcon
         action="prev"
         position={{ left: 16 }}
-        play={setAutoPlay}
-        index={setCurrentIndex}
+        setAutoPlay={setAutoPlay}
+        setCurrentIndex={setCurrentIndex}
       />
       <ChevronIcon
         action="next"
         position={{ right: 16 }}
-        play={setAutoPlay}
-        index={setCurrentIndex}
+        setAutoPlay={setAutoPlay}
+        setCurrentIndex={setCurrentIndex}
       />
 
       <NavigationDots

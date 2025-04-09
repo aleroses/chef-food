@@ -9,17 +9,17 @@ import { sliderData } from "../../assets/fake-data/slider";
 export const ChevronIcon = ({
   action,
   position,
-  play,
-  index,
+  setAutoPlay,
+  setCurrentIndex,
 }) => {
   const nextSlide = () => {
-    index((prev) =>
+    setCurrentIndex((prev) =>
       prev === sliderData.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevSlide = () => {
-    index((prev) =>
+    setCurrentIndex((prev) =>
       prev === 0 ? sliderData.length - 1 : prev - 1
     );
   };
@@ -27,20 +27,44 @@ export const ChevronIcon = ({
   return (
     <IconButton
       onClick={action === "prev" ? prevSlide : nextSlide}
-      onMouseEnter={() => play(false)}
-      onMouseLeave={() => play(true)}
+      onMouseEnter={() => setAutoPlay(false)}
+      onMouseLeave={() => setAutoPlay(true)}
+      onTouchStart={() => setAutoPlay(false)}
+      onTouchEnd={() => setAutoPlay(true)}
+      onFocus={() => setAutoPlay(false)}
+      onBlur={() => setAutoPlay(true)}
       sx={{
         position: "absolute",
         ...position,
         top: "50%",
         transform: "translateY(-50%)",
         zIndex: 1,
-        bgcolor: "primary.main",
-        // bgcolor: "rgba(255, 255, 255, 0.7)",
-        "&:hover": {
-          bgcolor: "rgba(30, 29, 29, 0.7)",
+        bgcolor: "rgba(255, 255, 255, 0.2)",
+        transition: "all 0.3s ease-in-out",
+
+        "& .MuiSvgIcon-root": {
+          color: "common.black",
+          filter:
+            "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+          transition: "all 0.3s ease-in-out",
         },
-        // opacity: "0.5",
+        "&:hover": {
+          bgcolor: "rgba(0, 0, 0, 0.1)",
+          "& .MuiSvgIcon-root": {
+            color: "grey.800",
+            transform: "scale(1.1)",
+          },
+        },
+
+        "&:focus-visible": {
+          outline: "2px solid",
+          outlineColor: "rgba(0, 0, 0, 0.3)",
+          bgcolor: "rgba(0, 0, 0, 0.15)",
+        },
+        // Efecto activo (al hacer clic)
+        "&:active": {
+          transform: "translateY(-50%) scale(0.95)",
+        },
       }}
     >
       {action === "prev" ? (
