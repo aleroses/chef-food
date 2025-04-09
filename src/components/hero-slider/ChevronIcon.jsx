@@ -34,12 +34,14 @@ export const ChevronIcon = ({
       onFocus={() => setAutoPlay(false)}
       onBlur={() => setAutoPlay(true)}
       sx={{
-        position: "absolute",
+        position: "fixed",
         ...position,
-        top: "50%",
+        top: "45%",
         // transform: "translateY(-50%)",
         zIndex: 1,
-        bgcolor: "rgba(255, 255, 255, 0.2)",
+        bgcolor: {
+          sm: "rgba(255, 255, 255, 0.2)",
+        },
         transition: "all 0.3s ease-in-out",
 
         "& .MuiSvgIcon-root": {
@@ -63,6 +65,9 @@ export const ChevronIcon = ({
         },
         // Efecto activo (al hacer clic)
         "&:active": {
+          bgcolor: {
+            xs: "rgba(0, 0, 0, 1)",
+          },
           transform: "translateY(-50%) scale(0.95)",
         },
       }}

@@ -44,13 +44,16 @@ export const HeroSlider = () => {
     <Box
       sx={{
         position: "relative",
-        width: "90vw",
+        width: "82vw",
         height: "65vh",
         display: "grid",
         justifySelf: "center",
 
         overflow: "hidden",
         mt: 2,
+        ml: {
+          md: 4,
+        },
         // borderRadius: "1rem",
         // bgcolor: "red",
       }}
@@ -70,6 +73,7 @@ export const HeroSlider = () => {
           <Box
             key={item.title}
             sx={{
+              justifyItems: "center",
               width: `${100 / sliderData.length}%`,
               height: "100%",
               // bgcolor: "yellow",
@@ -78,7 +82,7 @@ export const HeroSlider = () => {
           >
             <Card
               sx={{
-                width: "100%",
+                width: "99%",
                 height: "100%",
                 // aspectRatio: 16 / 9,
                 display: "flex",
@@ -94,10 +98,8 @@ export const HeroSlider = () => {
                   width: "100%",
                   height: "100%",
                   display: "flex",
-                  // justifyContent: "space-evenly",
                   justifyContent: "center",
                   flexDirection: "column",
-                  // gap: 4,
                 }}
               >
                 <CardContent
@@ -108,7 +110,9 @@ export const HeroSlider = () => {
                       xs: "50%",
                       sm: "30%",
                     },
-                    p: [0, 2, 2],
+                    // textWrap: "balance",
+                    // p: [0, 2, 2],
+                    p: 0,
                     // flex: "1 0 auto",
                     // bgcolor: "red",
                   }}
@@ -122,21 +126,13 @@ export const HeroSlider = () => {
                   >
                     {item.title}
                   </Typography>
-                  <Typography
-                    component="p"
-                    sx={{
-                      pr: 1,
-                    }}
-                  >
+                  <Typography component="p">
                     {item.desc}
                   </Typography>
                 </CardContent>
                 <CardActions
                   sx={{
-                    pl: {
-                      xs: 0,
-                      sm: 2,
-                    },
+                    pl: 0,
                   }}
                 >
                   <Button
@@ -176,13 +172,13 @@ export const HeroSlider = () => {
 
       <ChevronIcon
         action="prev"
-        position={{ left: 5 }}
+        position={{ left: { xs: 5, sm: 20, md: 70 } }}
         setAutoPlay={setAutoPlay}
         setCurrentIndex={setCurrentIndex}
       />
       <ChevronIcon
         action="next"
-        position={{ right: 5 }}
+        position={{ right: { xs: 5, sm: 20, md: 70 } }}
         setAutoPlay={setAutoPlay}
         setCurrentIndex={setCurrentIndex}
       />
