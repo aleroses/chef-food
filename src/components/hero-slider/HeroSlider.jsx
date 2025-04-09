@@ -147,7 +147,7 @@ export const HeroSlider = () => {
                 alt={item.title}
                 sx={{
                   width: {
-                    md: "40%",
+                    md: "50%",
                   },
                   display: {
                     xs: "none",
