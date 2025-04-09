@@ -63,10 +63,18 @@ export const HeroSlider = () => {
           width: `${sliderData.length * 100}%`,
           // height: "100%",
           display: "flex",
-          transform: `translateX(-${
-            (currentIndex * 100) / sliderData.length
-          }%)`,
-          transition: "transform 0.9s ease-out",
+          transform: `${
+            currentIndex === 0
+              ? "translateX(0)"
+              : `translateX(-${
+                  (currentIndex * 100) / sliderData.length
+                }%)`
+          }   `,
+          transition: `${
+            currentIndex === 0
+              ? "none"
+              : "transform 0.9s ease-out"
+          }`,
         }}
       >
         {sliderData.map((item) => (
