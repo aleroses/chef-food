@@ -17,9 +17,9 @@ export const NavListDrawer = ({
     <Box
       sx={{
         width: 250,
-        // height: "100%",
-        // display: "flex",
-        // alignItems: "center",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
         // justifyContent: "center"
         // backgroundColor: "primary.main",
       }}
@@ -41,8 +41,8 @@ export const NavListDrawer = ({
                 {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
                 <ListItemText
                   sx={{
-                    // display: "flex",
-                    // justifyContent: "center",
+                    display: "flex",
+                    justifyContent: "center",
                     color: "primary.text",
                   }}
                 >
