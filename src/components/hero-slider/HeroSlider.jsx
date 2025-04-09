@@ -94,15 +94,20 @@ export const HeroSlider = () => {
                   width: "100%",
                   height: "100%",
                   display: "flex",
-                  justifyContent: "space-evenly",
+                  // justifyContent: "space-evenly",
+                  justifyContent: "center",
                   flexDirection: "column",
+                  // gap: 4,
                 }}
               >
                 <CardContent
                   sx={{
                     width: "100%",
                     height: "auto",
-                    minHeight: "50%",
+                    minHeight: {
+                      xs: "50%",
+                      sm: "30%",
+                    },
                     p: [0, 2, 2],
                     // flex: "1 0 auto",
                     // bgcolor: "red",
@@ -126,7 +131,14 @@ export const HeroSlider = () => {
                     {item.desc}
                   </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions
+                  sx={{
+                    pl: {
+                      xs: 0,
+                      sm: 2,
+                    },
+                  }}
+                >
                   <Button
                     size="medium"
                     sx={{
