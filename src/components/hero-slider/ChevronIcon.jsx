@@ -37,7 +37,7 @@ export const ChevronIcon = ({
         position: "absolute",
         ...position,
         top: "50%",
-        transform: "translateY(-50%)",
+        // transform: "translateY(-50%)",
         zIndex: 1,
         bgcolor: "rgba(255, 255, 255, 0.2)",
         transition: "all 0.3s ease-in-out",

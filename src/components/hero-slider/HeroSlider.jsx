@@ -164,13 +164,13 @@ export const HeroSlider = () => {
 
       <ChevronIcon
         action="prev"
-        position={{ left: 16 }}
+        position={{ left: 5 }}
         setAutoPlay={setAutoPlay}
         setCurrentIndex={setCurrentIndex}
       />
       <ChevronIcon
         action="next"
-        position={{ right: 16 }}
+        position={{ right: 5 }}
         setAutoPlay={setAutoPlay}
         setCurrentIndex={setCurrentIndex}
       />
