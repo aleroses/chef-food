@@ -13,5 +13,5 @@ export const PopularMenu = () => {
 
   console.log(allProducts);
 
-  return <Container>PopularMenu</Container>;
+  // return <Container>PopularMenu</Container>;
 };

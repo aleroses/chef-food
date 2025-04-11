@@ -83,7 +83,10 @@ export const Navbar = () => {
               display: { xs: "none", md: "flex" },
             }}
           />
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            sx={{ flexGrow: 1, color: "text.primary" }}
+          >
             Chef Food
           </Typography>
           <Box
@@ -120,7 +123,6 @@ export const Navbar = () => {
 
           <Badge
             badgeContent={4}
-            color="secondary"
             sx={{
               ml: 2,
               "& .MuiBadge-badge": {
@@ -128,6 +130,9 @@ export const Navbar = () => {
                 top: 3,
                 border: `1px solid`,
                 padding: "0 4px",
+                color:"primary.main",
+                bgcolor: "text.primary",
+                fontWeight: "600"
               },
             }}
           >

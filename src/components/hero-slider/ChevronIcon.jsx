@@ -63,7 +63,7 @@ export const ChevronIcon = ({
         transition: "all 0.3s ease-in-out",
 
         "& .MuiSvgIcon-root": {
-          color: "common.black",
+          color: "text.tertiary",
           filter:
             "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
           transition: "all 0.3s ease-in-out",

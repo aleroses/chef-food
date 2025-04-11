@@ -25,11 +25,14 @@ const theme = createTheme({
       main: "#0f111a",
     },
     focus: {
-      main: "#4f46e5",
+      // main: "#4f46e5",
+      main: "#9facbe",
     },
     text: {
-      primary: "#000",
-      secondary: "#9facbe",
+      primary: "#FFB200",
+      secondary: "#F3C623",
+      tertiary: "#FCF596",
+      test: "#FCECDD",
     },
   },
 });

@@ -45,7 +45,7 @@ export const NavigationDots = ({
               borderRadius: "50%",
               bgcolor:
                 currentIndex === index
-                  ? "primary.main"
+                  ? "text.tertiary"
                   : "grey.400",
 
               transition: "background-color 0.3s ease",

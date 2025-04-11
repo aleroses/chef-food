@@ -202,15 +202,19 @@ export const HeroSlider = () => {
                   <Button
                     size="small"
                     sx={{
-                      bgcolor: "primary.main",
-                      color: "text.secondary",
+                      // bgcolor: "primary.main",
+
+                      bgcolor: "#F76E11",
+                      fontWeight: "600",
+                      color: "text.test",
                       "&:hover": {
-                        bgcolor: "secondary.main",
+                        bgcolor: "text.primary",
                       },
                       fontSize: {
                         xs: "0.7rem",
                         sm: "0.875rem",
                       },
+                      p: 1
                     }}
                   >
                     Explore Food
