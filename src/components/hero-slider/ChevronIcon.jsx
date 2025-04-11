@@ -4,24 +4,41 @@ import {
   ChevronRight as ChevronRightIcon,
 } from "@mui/icons-material";
 
-import { sliderData } from "../../assets/fake-data/slider";
-
 export const ChevronIcon = ({
   action,
   position,
   setAutoPlay,
   setCurrentIndex,
+  currentIndex,
+  setTransitionEnabled,
+  totalSlides,
+  actualSlides,
 }) => {
   const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === sliderData.length - 1 ? 0 : prev + 1
-    );
+    if (currentIndex === totalSlides - 2) {
+      setTransitionEnabled(false);
+      setCurrentIndex(totalSlides - 1);
+
+      setTimeout(() => {
+        setTransitionEnabled(false);
+        setCurrentIndex(1);
+      }, 50);
+    } else {
+      setCurrentIndex((prev) => prev + 1);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? sliderData.length - 1 : prev - 1
-    );
+    if (currentIndex === 1) {
+      setTransitionEnabled(false);
+      setCurrentIndex(0);
+      setTimeout(() => {
+        setTransitionEnabled(false);
+        setCurrentIndex(actualSlides);
+      }, 50);
+    } else {
+      setCurrentIndex((prev) => prev - 1);
+    }
   };
 
   return (
