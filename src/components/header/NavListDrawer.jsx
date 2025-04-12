@@ -33,7 +33,7 @@ export const NavListDrawer = ({
                 href={item.path}
                 sx={{
                   "&:hover, &:focus": {
-                    color: "text.secondary",
+                    color: "accent.light",
                     bgcolor: "primary.main",
                     opacity: 0.9,
                   },
@@ -44,9 +44,9 @@ export const NavListDrawer = ({
                   sx={{
                     display: "flex",
                     justifyContent: "center",
-                    color: "primary.text",
+                    color: "primary.contrast",
                     "&:hover, &:focus": {
-                      color: "text.secondary",
+                      color: "accent.light",
                     },
                   }}
                 >

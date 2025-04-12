@@ -29,7 +29,7 @@ export const NavigationDots = ({
             transition: "all 0.3s ease",
             "&:hover": {
               transform: "scale(1.2)",
-              bgcolor: "action.hover",
+              // bgcolor: "action.hover",
             },
             "&:focus-visible": {
               outline: "2px solid",
@@ -45,8 +45,8 @@ export const NavigationDots = ({
               borderRadius: "50%",
               bgcolor:
                 currentIndex === index
-                  ? "text.tertiary"
-                  : "grey.400",
+                  ? "accent.tertiary"
+                  : "text.disabled",
 
               transition: "background-color 0.3s ease",
               transform:

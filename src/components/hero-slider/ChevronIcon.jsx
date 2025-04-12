@@ -57,21 +57,21 @@ export const ChevronIcon = ({
         // transform: "translateY(-50%)",
         zIndex: 1,
         bgcolor: {
-          xs: "rgba(255, 255, 255, 0.025)",
+          xs: "rgba(255, 255, 255, 0.05)",
           sm: "rgba(255, 255, 255, 0.2)",
         },
         transition: "all 0.3s ease-in-out",
 
         "& .MuiSvgIcon-root": {
-          color: "text.tertiary",
+          color: "warning.main",
           filter:
-            "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+            "drop-shadow(0 2px 2px rgba(0,0,0,0.3))",
           transition: "all 0.3s ease-in-out",
         },
         "&:hover": {
-          bgcolor: "rgba(0, 0, 0, 0.1)",
+          bgcolor: "rgba(0, 0, 0, 0.2)",
           "& .MuiSvgIcon-root": {
-            color: "grey.800",
+            color: "accent.tertiary",
             transform: "scale(1.1)",
           },
         },

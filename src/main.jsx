@@ -5,6 +5,7 @@ import {
   createTheme,
 } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 
 import App from "./App.jsx";
 import "./index.css";
@@ -19,22 +20,47 @@ const theme = createTheme({
     mode: "light",
     primary: {
       main: "#090b10",
-      text: "#fff",
+      contrast: "#fff",
     },
     secondary: {
       main: "#0f111a",
     },
-    focus: {
-      // main: "#4f46e5",
-      main: "#9facbe",
+    accent: {
+      main: "#FFB200",
+      light: "#F3C623",
+      tertiary: "#ffe92e",
+    },
+    background: {
+      default: "#FCECDD",
+      paper: "#ffffff",
     },
     text: {
-      primary: "#FFB200",
-      secondary: "#F3C623",
-      tertiary: "#FCF596",
-      test: "#FCECDD",
+      primary: "#c4c4c4",
+      secondary: "#5a5a5a",
+      disabled: "#9facbe",
+    },
+    warning: {
+      main: "#FCF596",
+    },
+    food: {
+      fresh: "#2ACE92", // Verde para elementos orgánicos
+      spicy: "#FF766B", // Rojo para platos picantes
+      purple: "#7865FF",
+      yellow: "#F5B70A",
+    },
+    transparent: {
+      white: {
+        light: alpha("#fff", 0.1), // Para fondos claros
+        medium: alpha("#fff", 0.3),
+      },
+      black: {
+        light: alpha("#090b10", 0.1), // Para fondos oscuros
+        medium: alpha("#090b10", 0.3),
+      },
     },
   },
+  // #4f46e5
+  // #aaaaaa
 });
 
 createRoot(document.getElementById("root")).render(

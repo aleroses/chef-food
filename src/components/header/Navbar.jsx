@@ -85,7 +85,7 @@ export const Navbar = () => {
           />
           <Typography
             variant="h6"
-            sx={{ flexGrow: 1, color: "text.primary" }}
+            sx={{ flexGrow: 1, color: "accent.main" }}
           >
             Chef Food
           </Typography>
@@ -101,7 +101,7 @@ export const Navbar = () => {
                 sx={{
                   "&:hover, &:focus": {
                     bgcolor: "secondary.main",
-                    color: "text.secondary",
+                    color: "accent.tertiary",
                     opacity: 0.9,
                   },
                 }}
@@ -130,9 +130,9 @@ export const Navbar = () => {
                 top: 3,
                 border: `1px solid`,
                 padding: "0 4px",
-                color:"primary.main",
-                bgcolor: "text.primary",
-                fontWeight: "600"
+                color: "primary.main",
+                bgcolor: "accent.light",
+                fontWeight: "600",
               },
             }}
           >
