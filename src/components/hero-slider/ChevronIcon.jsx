@@ -51,11 +51,11 @@ export const ChevronIcon = ({
       onFocus={() => setAutoPlay(false)}
       onBlur={() => setAutoPlay(true)}
       sx={{
-        position: "fixed",
+        position: "absolute",
         ...position,
-        top: "45%",
+        top: { xs: "36%", md: "40%" },
         // transform: "translateY(-50%)",
-        zIndex: 1,
+        // zIndex: 2,
         bgcolor: {
           xs: "rgba(255, 255, 255, 0.05)",
           sm: "rgba(255, 255, 255, 0.2)",

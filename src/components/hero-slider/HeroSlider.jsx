@@ -82,174 +82,182 @@ export const HeroSlider = () => {
       : currentIndex - 1;
 
   return (
-    <Box
-      component="section"
-      sx={{
-        position: "relative",
-        width: "82%",
-        // height: "60vh",
-
-        height: {
-          xs: "60vh",
-          md: "65vh",
-        },
-        // display: "grid",
-        justifySelf: "center",
-
-        overflow: "hidden",
-
-        mt: 2,
-        ml: {
-          md: 4,
-        },
-        // borderRadius: "1rem",
-        // bgcolor: "red",
-        p: 0,
-      }}
-      onMouseEnter={() => setAutoPlay(false)}
-      onMouseLeave={() => setAutoPlay(true)}
-    >
+    <>
       <Box
-        ref={sliderRef}
+        component="section"
         sx={{
-          width: `${totalSlides * 100}%`,
-          height: "100%",
-          display: "flex",
-          transform: `translateX(-${
-            (currentIndex * 100) / totalSlides
-          }%)`,
-          transition: transitionEnabled
-            ? "transform 0.9s ease-out"
-            : "none",
+          position: "relative",
+          width: "82%",
+          // height: "60vh",
 
-          // bgcolor: "blue",
+          height: {
+            xs: "60vh",
+            md: "65vh",
+          },
+          // display: "grid",
+          justifySelf: "center",
+
+          overflow: "hidden",
+
+          mt: 2,
+          ml: {
+            md: 4,
+          },
+          // borderRadius: "1rem",
+          // bgcolor: "red",
+          p: 0,
+          // zIndex: 1,
         }}
+        onMouseEnter={() => setAutoPlay(false)}
+        onMouseLeave={() => setAutoPlay(true)}
       >
-        {slides.map((item, index) => (
-          <Box
-            // component="section"
-            key={`${item.id}-${index}`}
-            sx={{
-              width: `${100 / totalSlides}%`,
-              height: "100%",
+        <Box
+          ref={sliderRef}
+          sx={{
+            width: `${totalSlides * 100}%`,
+            height: "100%",
+            display: "flex",
+            transform: `translateX(-${
+              (currentIndex * 100) / totalSlides
+            }%)`,
+            transition: transitionEnabled
+              ? "transform 0.9s ease-out"
+              : "none",
 
-              display: "flex",
-              alignItems: "center",
-              // bgcolor: "yellow",
-              // flexShrink: 0,
-            }}
-          >
-            <Card
+            // bgcolor: "blue",
+          }}
+        >
+          {slides.map((item, index) => (
+            <Box
+              // component="section"
+              key={`${item.id}-${index}`}
               sx={{
-                width: "100%",
+                width: `${100 / totalSlides}%`,
                 height: "100%",
+
                 display: "flex",
-                flexDirection: {
-                  xs: "column",
-                  md: "row",
-                },
-                bgcolor: "secondary.main",
-                // aspectRatio: 16 / 9,
+                alignItems: "center",
+                // bgcolor: "yellow",
+                // flexShrink: 0,
               }}
             >
-              <Box
+              <Card
                 sx={{
                   width: "100%",
                   height: "100%",
                   display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  p: { xs: 1, sm: 2 }, // Padding responsive
-                  gap: 2,
+                  flexDirection: {
+                    xs: "column",
+                    md: "row",
+                  },
+                  bgcolor: "secondary.main",
+                  // aspectRatio: 16 / 9,
                 }}
               >
-                <CardContent
+                <Box
                   sx={{
                     width: "100%",
-                    height: "auto",
-                    // textWrap: "balance",
-                    // p: [0, 2, 2],
-                    p: 0,
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    p: { xs: 1, sm: 2 }, // Padding responsive
                     gap: 2,
-                    // flex: "1 0 auto",
-                    // bgcolor: "red",
                   }}
                 >
-                  <Typography
-                    variant="h5"
-                    gutterBottom
+                  <CardContent
                     sx={{
-                      color: "accent.light",
-                      fontSize: {
-                        xs: "1.2rem",
-                        sm: "1.5rem",
-                      },
+                      width: "100%",
+                      height: "auto",
+                      // textWrap: "balance",
+                      // p: [0, 2, 2],
+                      p: 0,
+                      gap: 2,
+                      // flex: "1 0 auto",
+                      // bgcolor: "red",
                     }}
                   >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    component="p"
+                    <Typography
+                      variant="h5"
+                      gutterBottom
+                      sx={{
+                        color: "accent.light",
+                        fontSize: {
+                          xs: "1.2rem",
+                          sm: "1.5rem",
+                        },
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      component="p"
+                      sx={{
+                        fontSize: {
+                          xs: "0.8rem",
+                          sm: "1rem",
+                        },
+                      }}
+                    >
+                      {item.desc}
+                    </Typography>
+                  </CardContent>
+                  <CardActions
                     sx={{
-                      fontSize: {
-                        xs: "0.8rem",
-                        sm: "1rem",
-                      },
+                      pl: 0,
                     }}
                   >
-                    {item.desc}
-                  </Typography>
-                </CardContent>
-                <CardActions
+                    <Button
+                      size="small"
+                      sx={{
+                        color: "primary.main",
+                        bgcolor: "accent.main",
+                        fontWeight: "600",
+                        "&:hover": {
+                          color: "primary.contrast",
+                          bgcolor: "primary.main",
+                        },
+                        fontSize: {
+                          xs: "0.7rem",
+                          sm: "0.875rem",
+                        },
+                        p: 1,
+                      }}
+                    >
+                      Explore Food
+                    </Button>
+                  </CardActions>
+                </Box>
+                <CardMedia
+                  component="img"
+                  image={item.imgUrl}
+                  alt={item.title}
                   sx={{
-                    pl: 0,
+                    width: {
+                      md: "50%",
+                    },
+                    display: {
+                      xs: "none",
+                      md: "flex",
+                    },
+                    alignSelf: "center",
+                    objectFit: "cover",
                   }}
-                >
-                  <Button
-                    size="small"
-                    sx={{
-                      color: "primary.main",
-                      bgcolor: "accent.main",
-                      fontWeight: "600",
-                      "&:hover": {
-                        color: "primary.contrast",
-                        bgcolor: "primary.main",
-                      },
-                      fontSize: {
-                        xs: "0.7rem",
-                        sm: "0.875rem",
-                      },
-                      p: 1,
-                    }}
-                  >
-                    Explore Food
-                  </Button>
-                </CardActions>
-              </Box>
-              <CardMedia
-                component="img"
-                image={item.imgUrl}
-                alt={item.title}
-                sx={{
-                  width: {
-                    md: "50%",
-                  },
-                  display: {
-                    xs: "none",
-                    md: "flex",
-                  },
-                  alignSelf: "center",
-                  objectFit: "cover",
-                }}
-              />
-            </Card>
-          </Box>
-        ))}
-      </Box>
+                />
+              </Card>
+            </Box>
+          ))}
+        </Box>
 
+        <NavigationDots
+          // currentIndex={currentIndex}
+          currentIndex={realIndex}
+          goToSlide={goToSlide}
+        />
+      </Box>
       <ChevronIcon
         action="prev"
-        position={{ left: { xs: 5, sm: 20, md: 70 } }}
+        position={{ left: { xs: 15, sm: 20, md: 70 } }}
         setAutoPlay={setAutoPlay}
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}
@@ -260,7 +268,9 @@ export const HeroSlider = () => {
       />
       <ChevronIcon
         action="next"
-        position={{ right: { xs: 5, sm: 20, md: 70 } }}
+        position={{
+          right: { xs: 15, sm: 20, md: 70 },
+        }}
         setAutoPlay={setAutoPlay}
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}
@@ -269,12 +279,6 @@ export const HeroSlider = () => {
         actualSlides={actualSlides}
         // onClick={handleNext}
       />
-
-      <NavigationDots
-        // currentIndex={currentIndex}
-        currentIndex={realIndex}
-        goToSlide={goToSlide}
-      />
-    </Box>
+    </>
   );
 };
