@@ -87,11 +87,17 @@ export const HeroSlider = () => {
       sx={{
         position: "relative",
         width: "82%",
-        height: "65vh",
+        // height: "60vh",
+
+        height: {
+          xs: "60vh",
+          md: "65vh",
+        },
         // display: "grid",
         justifySelf: "center",
 
         overflow: "hidden",
+
         mt: 2,
         ml: {
           md: 4,

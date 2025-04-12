@@ -50,7 +50,7 @@ const theme = createTheme({
     },
     transparent: {
       white: {
-        light: alpha("#fff", 0.1), // Para fondos claros
+        light: alpha("#c4c4c4", 0.05), // Para fondos claros
         medium: alpha("#fff", 0.3),
       },
       black: {

@@ -84,8 +84,15 @@ export const Navbar = () => {
             }}
           />
           <Typography
-            variant="h6"
-            sx={{ flexGrow: 1, color: "accent.main" }}
+            variant="h5"
+            sx={{
+              flexGrow: 1,
+              color: "accent.main",
+
+              pl: {
+                md: 1,
+              },
+            }}
           >
             Chef Food
           </Typography>
