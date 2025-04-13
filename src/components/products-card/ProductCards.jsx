@@ -73,8 +73,8 @@ export const ProductCards = () => {
                 sx={{
                   // mb: 1,
                   fontSize: {
-                    xs: "1.2rem",
-                    sm: "1.5rem",
+                    xs: "1.2em",
+                    sm: "1.5em",
                   },
                 }}
               />
@@ -84,8 +84,8 @@ export const ProductCards = () => {
                 sx={{
                   color: "accent.main",
                   fontSize: {
-                    xs: "0.8rem",
-                    sm: "1rem",
+                    xs: "0.8em",
+                    sm: "1em",
                   },
                   fontWeight: "bold",
                   // color: theme.palette.text.primary,
@@ -106,8 +106,8 @@ export const ProductCards = () => {
                   component="span"
                   sx={{
                     fontSize: {
-                      xs: "0.8rem",
-                      sm: "1rem",
+                      xs: "0.8em",
+                      sm: "1em",
                     },
                   }}
                 >

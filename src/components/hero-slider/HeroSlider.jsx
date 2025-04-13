@@ -183,8 +183,8 @@ export const HeroSlider = () => {
                       sx={{
                         color: "accent.light",
                         fontSize: {
-                          xs: "1.2rem",
-                          sm: "1.5rem",
+                          xs: "1.2em",
+                          sm: "1.5em",
                         },
                       }}
                     >
@@ -194,8 +194,8 @@ export const HeroSlider = () => {
                       component="p"
                       sx={{
                         fontSize: {
-                          xs: "0.8rem",
-                          sm: "1rem",
+                          xs: "0.8em",
+                          sm: "1em",
                         },
                       }}
                     >

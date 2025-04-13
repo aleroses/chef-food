@@ -88,7 +88,7 @@ export const Navbar = () => {
             sx={{
               flexGrow: 1,
               color: "accent.main",
-
+              fontWeight: 700,
               pl: {
                 md: 1,
               },

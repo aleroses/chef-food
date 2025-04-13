@@ -11,7 +11,7 @@ export const PopularMenu = () => {
     })),
   ];
 
-  console.log(allProducts);
+  // console.log(allProducts);
 
   return (
     <Box
