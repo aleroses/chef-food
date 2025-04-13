@@ -92,7 +92,7 @@ export const HeroSlider = () => {
 
           height: {
             xs: "60vh",
-            md: "65vh",
+            md: "27.6rem",
           },
           // display: "grid",
           justifySelf: "center",
