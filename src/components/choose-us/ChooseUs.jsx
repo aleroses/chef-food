@@ -11,8 +11,6 @@ import pastaImg from "../../assets/images/pasta.png";
 import { chooseUs } from "../../assets/fake-data/choose-us";
 
 export const ChooseUs = () => {
-  console.log(chooseUs);
-
   return (
     <Box
       component="article"
@@ -20,7 +18,7 @@ export const ChooseUs = () => {
         width: "82%",
         justifySelf: "center",
         mb: 6,
-        border: "none",
+        // border: "none",
       }}
     >
       <Card

@@ -19,8 +19,6 @@ export const ChevronIcon = ({
 
   const iconHeight = windowHeight < 682 ? "40%" : "17rem";
 
-  console.log(windowHeight);
-
   const nextSlide = () => {
     if (currentIndex === totalSlides - 2) {
       setTransitionEnabled(false);

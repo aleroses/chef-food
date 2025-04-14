@@ -126,10 +126,6 @@ export const ProductCards = () => {
                     {` $${item.price}`}
                   </Typography>
                 </Typography>
-                {/* <Chip
-                        label={`$${item.price}`}
-                        color="primary"
-                      /> */}
                 <ShoppingCartIcon />
               </Box>
             </CardContent>
