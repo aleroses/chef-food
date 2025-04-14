@@ -17,7 +17,7 @@ export const ChevronIcon = ({
   // Altura total de la ventana (incluye la parte no visible con scroll)
   const windowHeight = window.innerHeight;
 
-  const iconHeight = windowHeight < 682 ? "40%" : "18.5rem";
+  const iconHeight = windowHeight < 682 ? "40%" : "18rem";
 
   console.log(windowHeight);
 
