@@ -1,9 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { popularMenuFood } from "../../assets/fake-data/products";
-import { ProductCards } from "../products-card/ProductCards";
+import { ProductCard } from "../products-card/ProductCard";
 
 export const PopularMenu = () => {
-
   const allProducts = [
     ...popularMenuFood.map((item) => ({
       ...item,
@@ -47,7 +46,11 @@ export const PopularMenu = () => {
         Popular Food Menu
       </Typography>
 
-      <ProductCards />
+      <Grid container spacing={2}>
+        {popularMenuFood.map((item) => (
+          <ProductCard key={item.id} product={item} />
+        ))}
+      </Grid>
     </Box>
   );
 };

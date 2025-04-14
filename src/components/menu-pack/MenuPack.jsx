@@ -18,6 +18,7 @@ import {
   coffeeProducts,
 } from "../../assets/fake-data/products.js";
 import { ShoppingCart as ShoppingCartIcon } from "@mui/icons-material";
+import { ProductCard } from "../products-card/ProductCard.jsx";
 
 const categoryData = [
   {
@@ -92,7 +93,7 @@ export const MenuPack = () => {
         direction="row"
         sx={{
           flexWrap: "wrap",
-          justifyContent: "center",
+          justifyContent: "space-evenly",
           mb: 4,
           gap: 2,
         }}
@@ -119,15 +120,15 @@ export const MenuPack = () => {
                 color:
                   selectedCategoryId === category.id
                     ? "primary.main"
-                    : "primary.contrast",
+                    : "primary.main",
                 bgcolor:
                   selectedCategoryId === category.id
                     ? "accent.tertiary"
-                    : "primary.main",
+                    : "accent.tertiary",
               },
               border:
                 selectedCategoryId === category.id
-                  ? "none"
+                  ? "1px solid #ffe92e"
                   : "1px solid #c4c4c4",
               cursor: "pointer",
 
@@ -136,8 +137,9 @@ export const MenuPack = () => {
                 sm: "1em",
               },
               p: {
-                xs: "0.8em",
-                sm: "1em",
+                xs: "0.8rem",
+                sm: "1rem",
+                md: "1.1rem",
               },
             }}
           />
@@ -145,109 +147,10 @@ export const MenuPack = () => {
       </Stack>
       <Grid container spacing={2}>
         {products.map((product) => (
-          <Grid
+          <ProductCard
             key={product.id}
-            size={{
-              xs: 6,
-              sm: 4,
-              md: 3,
-            }}
-          >
-            <Card
-              sx={{
-                // width: "100%",
-                // height: "100%",
-                // display: "flex",
-                // flexDirection: "column",
-                borderRadius: 3,
-                boxShadow: 3,
-                bgcolor: "transparent.white.light",
-              }}
-            >
-              <CardMedia
-                component="img"
-                image={product.imgUrl}
-                alt={product.title}
-                sx={{
-                  width: "100%",
-                  // objectFit: "cover",
-                }}
-              />
-
-              <CardContent
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  // flexGrow: 1,
-                  // justifyContent: "center",
-                  alignItems: "center",
-                  p: 1.5,
-                  // m: 0,
-                  gap: 1,
-                }}
-              >
-                <Rating
-                  value={5}
-                  sx={{
-                    fontSize: {
-                      xs: "1.2em",
-                      sm: "1.5em",
-                    },
-                  }}
-                />
-                <Typography
-                  component="h5"
-                  sx={{
-                    color: "accent.main",
-                    fontSize: {
-                      xs: "0.8em",
-                      sm: "1em",
-                    },
-                    fontWeight: "bold",
-                  }}
-                >
-                  {product.title}
-                </Typography>
-
-                <Box
-                  sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "space-around",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    component="span"
-                    sx={{
-                      fontSize: {
-                        xs: "0.8em",
-                        sm: "1em",
-                      },
-                    }}
-                  >
-                    Price:
-                    <Typography
-                      variant="body1"
-                      component="span"
-                      sx={{
-                        fontSize: {
-                          xs: "0.8rem",
-                          sm: "1rem",
-                        },
-                        color: "accent.main",
-                      }}
-                    >
-                      {` $${product.price}`}
-                    </Typography>
-                  </Typography>
-                  <ShoppingCartIcon />
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
+            product={product}
+          />
         ))}
       </Grid>
     </Box>
