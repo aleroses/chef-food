@@ -41,6 +41,7 @@ export const ProductCard = ({ product }) => {
           component="img"
           image={product.imgUrl}
           alt={product.title}
+          loading="lazy"
           sx={{
             width: "100%",
             // height: isMobile ? 160 : 200,

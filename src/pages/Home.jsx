@@ -4,6 +4,7 @@ import { HeroSlider } from "../components/hero-slider/HeroSlider";
 import { PopularMenu } from "../components/popular-menu/PopularMenu";
 import { ChooseUs } from "../components/choose-us/ChooseUs";
 import { MenuPack } from "../components/menu-pack/MenuPack";
+import { Testimonials } from "../components/testimonials/Testimonials";
 
 export const Home = () => {
   return (
@@ -13,6 +14,7 @@ export const Home = () => {
       <PopularMenu />
       <ChooseUs />
       <MenuPack />
+      <Testimonials />
     </>
   );
 };

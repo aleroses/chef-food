@@ -9,77 +9,91 @@ import {
   Typography,
 } from "@mui/material";
 
-import { sliderData } from "../../assets/fake-data/slider";
 import { ChevronIcon } from "./ChevronIcon";
 import { NavigationDots } from "./NavigationDots";
+import { useHeroSlider } from "../../hooks/useHeroSlider";
+
+import { sliderData } from "../../assets/fake-data/slider";
 
 export const HeroSlider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
-  const [transitionEnabled, setTransitionEnabled] =
-    useState(true);
+  const {
+    currentIndex,
+    setCurrentIndex,
+    autoPlay,
+    setAutoPlay,
+    transitionEnabled,
+    setTransitionEnabled,
+    sliderRef,
+    slides,
+    totalSlides,
+    actualSlides,
+    goToSlide,
+    realIndex,
+  } = useHeroSlider(sliderData);
 
-  const sliderRef = useRef(null);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const [autoPlay, setAutoPlay] = useState(true);
+  // const [transitionEnabled, setTransitionEnabled] =
+  //   useState(true);
 
-  const slides = [
-    sliderData[sliderData.length - 1],
-    ...sliderData,
-    sliderData[0],
-  ];
+  // const sliderRef = useRef(null);
 
-  const totalSlides = slides.length;
-  const actualSlides = sliderData.length;
+  // const slides = [
+  //   sliderData[sliderData.length - 1],
+  //   ...sliderData,
+  //   sliderData[0],
+  // ];
 
-  useEffect(() => {
-    if (!autoPlay) return;
+  // const totalSlides = slides.length;
+  // const actualSlides = sliderData.length;
 
-    console.log("ejecutando...");
+  // useEffect(() => {
+  //   if (!autoPlay) return;
 
-    const interval = setInterval(() => {
-      console.log("Interval activo");
-      setCurrentIndex((prev) => {
-        const newIndex = prev + 1;
+  //   console.log("ejecutando...");
 
-        if (newIndex === totalSlides - 1) {
-          setTimeout(() => {
-            setTransitionEnabled(false);
-            setCurrentIndex(1);
-          }, 900);
+  //   const interval = setInterval(() => {
+  //     console.log("Interval activo");
 
-          return newIndex;
-        }
-        // prev === sliderData.length - 1 ? 0 : prev + 1;
-        return newIndex;
-      });
-    }, 3000);
+  //     setCurrentIndex((prev) => {
+  //       const newIndex = prev + 1;
 
-    return () => {
-      // Cada vez que se actualiza autoPlay, se limpia el intervalo anterior y se crea uno nuevo (si aplica).
-      console.log("Limpiando interval...");
-      clearInterval(interval);
-    };
-  }, [autoPlay, totalSlides]);
+  //       if (newIndex === totalSlides - 1) {
+  //         setTimeout(() => {
+  //           setTransitionEnabled(false);
+  //           setCurrentIndex(1);
+  //         }, 900);
 
-  useEffect(() => {
-    // Reactivamos la transición después del "salto"
-    if (!transitionEnabled) {
-      setTimeout(() => {
-        setTransitionEnabled(true);
-      }, 50);
-    }
-  }, [transitionEnabled]);
+  //         return newIndex;
+  //       }
+  //       return newIndex;
+  //     });
+  //   }, 3000);
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index + 1);
-  };
+  //   return () => {
+  //     console.log("Limpiando interval...");
+  //     clearInterval(interval);
+  //   };
+  // }, [autoPlay, totalSlides]);
 
-  // Calculamos el índice real para los dots de navegación
-  const realIndex =
-    currentIndex === 0
-      ? actualSlides - 1
-      : currentIndex === totalSlides - 1
-      ? 0
-      : currentIndex - 1;
+  // useEffect(() => {
+  //   if (!transitionEnabled) {
+  //     setTimeout(() => {
+  //       setTransitionEnabled(true);
+  //     }, 50);
+  //   }
+  // }, [transitionEnabled]);
+
+  // const goToSlide = (index) => {
+  //   setCurrentIndex(index + 1);
+  // };
+
+  // const realIndex =
+  //   currentIndex === 0
+  //     ? actualSlides - 1
+  //     : currentIndex === totalSlides - 1
+  //     ? 0
+  //     : currentIndex - 1;
 
   return (
     <>
