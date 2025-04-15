@@ -46,6 +46,7 @@ export const ProductCard = ({ product }) => {
             width: "100%",
             // height: isMobile ? 160 : 200,
             objectFit: "cover",
+            aspectRatio: 1.5,
           }}
         />
 

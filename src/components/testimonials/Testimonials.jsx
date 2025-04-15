@@ -27,8 +27,6 @@ export const Testimonials = () => {
     realIndex,
   } = useHeroSlider(testimonials);
 
-  console.log(totalSlides, actualSlides);
-
   return (
     <Box
       component="section"
