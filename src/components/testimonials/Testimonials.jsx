@@ -9,6 +9,7 @@ import {
 import { testimonials } from "../../assets/fake-data/testimonials";
 import testimonialImg from "../../assets/images/review1.png";
 import { useHeroSlider } from "../../hooks/useHeroSlider";
+import { ChevronIcon } from "../hero-slider/ChevronIcon";
 
 export const Testimonials = () => {
   const {
@@ -26,9 +27,12 @@ export const Testimonials = () => {
     realIndex,
   } = useHeroSlider(testimonials);
 
+  console.log(totalSlides, actualSlides);
+
   return (
     <Box
       component="section"
+      position="relative"
       sx={{
         width: "82%",
         // maxHeight: {
@@ -169,17 +173,58 @@ export const Testimonials = () => {
             ))}
           </Box>
         </Box>
+
+        <ChevronIcon
+          action="prev"
+          position={{
+            left: { xs: -10, sm: -20 },
+            top: {
+              xs: "40%",
+              // md: iconHeight
+            },
+            // bottom: "20%",
+          }}
+          setAutoPlay={setAutoPlay}
+          setCurrentIndex={setCurrentIndex}
+          currentIndex={currentIndex}
+          setTransitionEnabled={setTransitionEnabled}
+          totalSlides={totalSlides}
+          actualSlides={actualSlides}
+          // onClick={handlePrev}
+        />
+        <ChevronIcon
+          action="next"
+          position={{
+            right: {
+              xs: -10,
+              sm: "32%",
+              // md: "33%",
+            },
+            top: {
+              xs: "40%",
+              // md: iconHeight
+            },
+            // bottom: "20%",
+          }}
+          setAutoPlay={setAutoPlay}
+          setCurrentIndex={setCurrentIndex}
+          currentIndex={currentIndex}
+          setTransitionEnabled={setTransitionEnabled}
+          totalSlides={totalSlides}
+          actualSlides={actualSlides}
+          // onClick={handleNext}
+        />
       </Box>
 
       <Card
-      elevation={0}
+        elevation={0}
         sx={{
           display: { xs: "none", sm: "flex" },
-          width: "100%",
-          width: {
-            // xs: "100%",
-            sm: "35%",
-          },
+          width: "35%",
+          // width: {
+          //   // xs: "100%",
+          //   sm: "35%",
+          // },
           justifyContent: "center",
           bgcolor: "secondary.main",
         }}

@@ -15,9 +15,9 @@ export const ChevronIcon = ({
   actualSlides,
 }) => {
   // Altura total de la ventana (incluye la parte no visible con scroll)
-  const windowHeight = window.innerHeight;
+  // const windowHeight = window.innerHeight;
 
-  const iconHeight = windowHeight < 682 ? "40%" : "17rem";
+  // const iconHeight = windowHeight < 682 ? "40%" : "17rem";
 
   const nextSlide = () => {
     if (currentIndex === totalSlides - 2) {
@@ -58,7 +58,7 @@ export const ChevronIcon = ({
       sx={{
         position: "absolute",
         ...position,
-        top: { xs: "36%", md: iconHeight },
+        // top: { xs: "36%", md: iconHeight },
         // transform: "translateY(-50%)",
         // zIndex: 2,
         bgcolor: {

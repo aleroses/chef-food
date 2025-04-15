@@ -31,69 +31,10 @@ export const HeroSlider = () => {
     realIndex,
   } = useHeroSlider(sliderData);
 
-  // const [currentIndex, setCurrentIndex] = useState(0);
-  // const [autoPlay, setAutoPlay] = useState(true);
-  // const [transitionEnabled, setTransitionEnabled] =
-  //   useState(true);
+  // Altura total de la ventana (incluye la parte no visible con scroll)
+  const windowHeight = window.innerHeight;
 
-  // const sliderRef = useRef(null);
-
-  // const slides = [
-  //   sliderData[sliderData.length - 1],
-  //   ...sliderData,
-  //   sliderData[0],
-  // ];
-
-  // const totalSlides = slides.length;
-  // const actualSlides = sliderData.length;
-
-  // useEffect(() => {
-  //   if (!autoPlay) return;
-
-  //   console.log("ejecutando...");
-
-  //   const interval = setInterval(() => {
-  //     console.log("Interval activo");
-
-  //     setCurrentIndex((prev) => {
-  //       const newIndex = prev + 1;
-
-  //       if (newIndex === totalSlides - 1) {
-  //         setTimeout(() => {
-  //           setTransitionEnabled(false);
-  //           setCurrentIndex(1);
-  //         }, 900);
-
-  //         return newIndex;
-  //       }
-  //       return newIndex;
-  //     });
-  //   }, 3000);
-
-  //   return () => {
-  //     console.log("Limpiando interval...");
-  //     clearInterval(interval);
-  //   };
-  // }, [autoPlay, totalSlides]);
-
-  // useEffect(() => {
-  //   if (!transitionEnabled) {
-  //     setTimeout(() => {
-  //       setTransitionEnabled(true);
-  //     }, 50);
-  //   }
-  // }, [transitionEnabled]);
-
-  // const goToSlide = (index) => {
-  //   setCurrentIndex(index + 1);
-  // };
-
-  // const realIndex =
-  //   currentIndex === 0
-  //     ? actualSlides - 1
-  //     : currentIndex === totalSlides - 1
-  //     ? 0
-  //     : currentIndex - 1;
+  const iconHeight = windowHeight < 682 ? "40%" : "17rem";
 
   return (
     <>
@@ -271,7 +212,10 @@ export const HeroSlider = () => {
       </Box>
       <ChevronIcon
         action="prev"
-        position={{ left: { xs: 15, sm: 20, md: 70 } }}
+        position={{
+          left: { xs: 15, sm: 20, md: 70 },
+          top: { xs: "36%", md: iconHeight },
+        }}
         setAutoPlay={setAutoPlay}
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}
@@ -284,6 +228,7 @@ export const HeroSlider = () => {
         action="next"
         position={{
           right: { xs: 15, sm: 20, md: 70 },
+          top: { xs: "36%", md: iconHeight },
         }}
         setAutoPlay={setAutoPlay}
         setCurrentIndex={setCurrentIndex}
