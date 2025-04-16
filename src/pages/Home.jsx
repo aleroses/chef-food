@@ -6,6 +6,7 @@ import { ChooseUs } from "../components/choose-us/ChooseUs";
 import { MenuPack } from "../components/menu-pack/MenuPack";
 import { Testimonials } from "../components/testimonials/Testimonials";
 import { DownloadApp } from "../components/download-app/DownloadApp";
+import { Footer } from "../components/footer/Footer";
 
 export const Home = () => {
   return (
@@ -17,6 +18,7 @@ export const Home = () => {
       <MenuPack />
       <Testimonials />
       <DownloadApp />
+      <Footer />
     </>
   );
 };
