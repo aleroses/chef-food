@@ -5,6 +5,7 @@ import { PopularMenu } from "../components/popular-menu/PopularMenu";
 import { ChooseUs } from "../components/choose-us/ChooseUs";
 import { MenuPack } from "../components/menu-pack/MenuPack";
 import { Testimonials } from "../components/testimonials/Testimonials";
+import { DownloadApp } from "../components/download-app/DownloadApp";
 
 export const Home = () => {
   return (
@@ -15,6 +16,7 @@ export const Home = () => {
       <ChooseUs />
       <MenuPack />
       <Testimonials />
+      <DownloadApp />
     </>
   );
 };
