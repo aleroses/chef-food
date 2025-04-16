@@ -25,9 +25,11 @@ export const DownloadApp = () => {
         justifyContent: "center",
         // justifySelf: "center",
         bgcolor: "accent.main",
+        mb: 8,
       }}
     >
       <Card
+        elevation={0}
         sx={{
           width: "100%",
           maxWidth: "800px",
@@ -38,6 +40,8 @@ export const DownloadApp = () => {
           },
           // justifyItems: "center",
           bgcolor: "accent.main",
+          // gap: 2,
+          pb: 2.2,
         }}
       >
         <CardMedia
@@ -56,28 +60,47 @@ export const DownloadApp = () => {
         <Box
           sx={{
             width: {
+              xs: "82%",
               sm: "50%",
             },
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            // justifyContent: "center",
+            alignSelf: "center",
+            pr: {
+              sm: 2,
+              md: 0,
+            },
+            py: {
+              sm: 2,
+              md: 0,
+            },
+            gap: 2,
           }}
         >
-          <CardContent>
+          <CardContent
+            // elevation={0}
+            // boxShadow={0}
+            sx={{
+              p: 0,
+            }}
+          >
             <Typography
-              variant="h4"
+              component="span"
               sx={{
-                color: "primary.main",
-                fontWeight: "700",
+                color: "secondary.main",
+                fontWeight: "500",
               }}
             >
               Download our app
             </Typography>
             <Typography
-              variant="body1"
+              variant="h5"
+              gutterBottom
+              // variant="body1"
               sx={{
                 color: "primary.main",
-                fontWeight: "500",
+                fontWeight: "600",
               }}
             >
               Never Feel Hungry! Download Our Mobile App
@@ -107,8 +130,10 @@ export const DownloadApp = () => {
               display: "flex",
               justifyContent: "space-between",
               // alignSelf: "center"
-              pr: 2,
-              pl: 2,
+              // p: 0,
+
+              pr: 0,
+              pl: 0,
             }}
           >
             <Button
@@ -127,13 +152,8 @@ export const DownloadApp = () => {
                   // height: "1.6rem",
                   display: "flex",
                   // alignItems: "center",
-                  fontSize: {
-                    xs: "0.8em",
-                    sm: "1em",
-                    textDecoration: "none",
-                    // p: 0,
-                    // m: 0,
-                  },
+
+                  textDecoration: "none",
                 }}
               >
                 <AppleIcon
@@ -141,7 +161,7 @@ export const DownloadApp = () => {
                   sx={{
                     display: "flex",
                     alignSelf: "center",
-                    mr: 1,
+                    // mr: 1,
                     color: "primary.contrast",
                   }}
                 />
@@ -151,8 +171,10 @@ export const DownloadApp = () => {
                     height: "",
                     // display: "flex",
                     // alignSelf: "center",
-                    p: 0,
-                    m: 0,
+                    fontSize: {
+                      xs: "0.8em",
+                      sm: "1em",
+                    },
                     textTransform: "capitalize",
                     lineHeight: 2,
                     color: "primary.contrast",
@@ -169,13 +191,11 @@ export const DownloadApp = () => {
                   // height: "1.6rem",
                   display: "flex",
                   // alignItems: "center",
-                  fontSize: {
-                    xs: "0.8em",
-                    sm: "1em",
-                    textDecoration: "none",
-                    // p: 0,
-                    // m: 0,
-                  },
+                  // fontSize: {
+                  //   xs: "0.8em",
+                  //   sm: "1em",
+                  // },
+                  textDecoration: "none",
                 }}
               >
                 <GoogleIcon
@@ -191,11 +211,14 @@ export const DownloadApp = () => {
                   sx={{
                     // display: "flex",
                     // alignSelf: "center",
-                    p: 0,
-                    m: 0,
+                    fontSize: {
+                      xs: "0.8em",
+                      sm: "1em",
+                    },
                     textTransform: "capitalize",
                     lineHeight: 2,
                     color: "primary.main",
+                    fontWeight: "500",
                   }}
                 >
                   PlayStore
