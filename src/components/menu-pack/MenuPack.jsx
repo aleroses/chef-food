@@ -5,10 +5,6 @@ import {
   Stack,
   Typography,
   Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  Rating,
 } from "@mui/material";
 import {
   fastFoodProducts,
@@ -17,7 +13,6 @@ import {
   pizzaProducts,
   coffeeProducts,
 } from "../../assets/fake-data/products.js";
-import { ShoppingCart as ShoppingCartIcon } from "@mui/icons-material";
 import { ProductCard } from "../products-card/ProductCard.jsx";
 
 const categoryData = [
@@ -148,7 +143,7 @@ export const MenuPack = () => {
       <Grid container spacing={2}>
         {products.map((product) => (
           <ProductCard
-            key={product.id}
+            key={`${currentCategory.id}-${product.id}`}
             product={product}
           />
         ))}

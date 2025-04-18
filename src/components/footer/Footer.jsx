@@ -61,12 +61,24 @@ export const Footer = () => {
     <Box
       sx={{
         width: "82%",
+        display: {
+          md: "flex",
+        },
         justifySelf: "center",
-        // p: 2.2,
+        // alignItems: "center",
+        gap: { md: 2 },
+        mb: 2,
+        // flexDirection: {
+        //   md: "row",
+        // },
       }}
     >
       <Box
         sx={{
+          width: {
+            md: "30%",
+          },
+
           mb: 2,
         }}
       >
@@ -112,21 +124,28 @@ export const Footer = () => {
           Lorem ipsum dolor sit amet, consectetur
           adipisicing elit. Reprehenderit itaque
           accusantium voluptates non, maiores quod omnis
-          corrupti, sequi libero ratione quas autem amet
-          cum vel voluptas necessitatibus doloribus,
-          pariatur facilis.
+          corrupti, sequi libero ratione quas.
         </Typography>
       </Box>
 
-      <Grid container spacing={2}>
-        {/* <Grid
-          size={{
-            xs: 6,
-            md: 4,
-          }}
-        > */}
+      <Grid
+        container
+        sx={{
+          width: {
+            md: "70%",
+          },
+          ml: { md: 8 },
+          rowGap: 2,
+        }}
+      >
         <Grid size={{ xs: 6, sm: 4 }}>
-          <Typography variant="span">
+          <Typography
+            variant="span"
+            sx={{
+              color: "accent.main",
+              fontWeight: "500",
+            }}
+          >
             Info Links
           </Typography>
 
@@ -138,7 +157,13 @@ export const Footer = () => {
             }}
           >
             {footerQuickLinks.map((item) => (
-              <Link key={item.display} href={item.url}>
+              <Link
+                key={item.display}
+                href={item.url}
+                sx={{
+                  textDecoration: "none",
+                }}
+              >
                 <ListItem
                   key={item.display}
                   sx={{
@@ -171,7 +196,13 @@ export const Footer = () => {
           </List>
         </Grid>
         <Grid size={{ xs: 6, sm: 4 }}>
-          <Typography variant="span" color="initial">
+          <Typography
+            variant="span"
+            sx={{
+              color: "accent.main",
+              fontWeight: "500",
+            }}
+          >
             Quick Links
           </Typography>
 
@@ -183,7 +214,13 @@ export const Footer = () => {
             }}
           >
             {footerLinks.map((item) => (
-              <Link key={item.display} href={item.url}>
+              <Link
+                key={item.display}
+                href={item.url}
+                sx={{
+                  textDecoration: "none",
+                }}
+              >
                 <ListItem
                   key={item.display}
                   sx={{
@@ -215,7 +252,13 @@ export const Footer = () => {
           </List>
         </Grid>
         <Grid size={{ xs: 6, sm: 4 }}>
-          <Typography variant="subtitle2">
+          <Typography
+            variant="subtitle2"
+            sx={{
+              color: "accent.main",
+              fontWeight: "500",
+            }}
+          >
             Contact
           </Typography>
 
@@ -229,17 +272,19 @@ export const Footer = () => {
             <ListItem
               sx={{
                 // display: "flex",
+                // color: "red",
+                display: "flex",
+                gap: 0.5,
                 p: 0,
               }}
             >
               <PlaceIcon
-                sx={
-                  {
-                    // width: "fitContent",
-                    // width: "100%",
-                    // bgcolor: "blue",
-                  }
-                }
+                sx={{
+                  fontSize: {
+                    xs: "1.2em",
+                    md: "1.5",
+                  },
+                }}
               />
               <ListItemText
                 sx={{
@@ -267,10 +312,19 @@ export const Footer = () => {
             </ListItem>
             <ListItem
               sx={{
+                display: "flex",
+                gap: 0.5,
                 p: 0,
               }}
             >
-              <EmailIcon />
+              <EmailIcon
+                sx={{
+                  fontSize: {
+                    xs: "1.2em",
+                    md: "1.5",
+                  },
+                }}
+              />
               <ListItemText
                 sx={{
                   m: 0,
@@ -293,10 +347,20 @@ export const Footer = () => {
             </ListItem>
             <ListItem
               sx={{
+                display: "flex",
+                gap: 0.5,
                 p: 0,
               }}
             >
-              <PhoneIcon />
+              <PhoneIcon
+                sx={{
+                  fontSize: {
+                    xs: "1.2em",
+                    md: "1.5",
+                  },
+                  // mr: 0.5,
+                }}
+              />
               <ListItemText
                 sx={{
                   m: 0,
@@ -320,7 +384,6 @@ export const Footer = () => {
           </List>
         </Grid>
       </Grid>
-      {/* </Grid> */}
     </Box>
   );
 };

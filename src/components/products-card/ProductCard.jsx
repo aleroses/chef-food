@@ -20,18 +20,28 @@ export const ProductCard = ({ product }) => {
     >
       <Card
         sx={{
-          // width: "100%",
-          // height: "100%",
-          // display: "flex",
-          // flexDirection: "column",
           borderRadius: 3,
           boxShadow: 3,
-          transition: "transform 0.5s",
+
+          transform: "scale(0)",
+          animation: "scaleIn 0.5s forwards",
+          "@keyframes scaleIn": {
+            // from: {
+            //   transform: "scale(0)",
+            //   opacity: 0,
+            // },
+            to: {
+              transform: "scale(1)",
+              opacity: 1,
+            },
+          },
+
           "&:hover": {
-            transform: "scale(1.03)",
-            // boxShadow: 6,
+            transform: "scale(1.03)  !important",
             boxShadow: "0 1px 9px #ffe92e",
           },
+          transition:
+            "transform 0.3s ease-out, box-shadow 0.3s ease-out",
 
           bgcolor: "transparent.white.light",
         }}
@@ -44,7 +54,6 @@ export const ProductCard = ({ product }) => {
           loading="lazy"
           sx={{
             width: "100%",
-            // height: isMobile ? 160 : 200,
             objectFit: "cover",
             aspectRatio: 1.5,
           }}
@@ -85,7 +94,6 @@ export const ProductCard = ({ product }) => {
                 sm: "1em",
               },
               fontWeight: "bold",
-              // color: theme.palette.text.primary,
             }}
           >
             {product.title}
