@@ -25,7 +25,7 @@ export const DownloadApp = () => {
         justifyContent: "center",
         // justifySelf: "center",
         bgcolor: "accent.main",
-        mb: 8,
+        mb: 4,
       }}
     >
       <Card

@@ -60,30 +60,28 @@ export const Footer = () => {
   return (
     <Box
       sx={{
-        width: "100%",
-        p: 2,
+        width: "82%",
+        justifySelf: "center",
+        // p: 2.2,
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          mb: 2,
+        }}
+      >
         <Box
           sx={{
             display: "flex",
+            mb: 2,
           }}
         >
-          <IconButton
-            color="inherit"
-            size="large"
-            aria-label=""
-            onClick={() => setOpen(true)}
-            sx={{
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
           <RestaurantMenuIcon
             sx={{
-              display: { xs: "none", md: "flex" },
+              // display: { xs: "none", md: "flex" },
+              display: "flex",
+              alignSelf: "center",
+              mr: 1,
             }}
           />
           <Typography
@@ -101,7 +99,16 @@ export const Footer = () => {
           </Typography>
         </Box>
 
-        <Typography variant="body1">
+        <Typography
+          variant="body1"
+          sx={{
+            fontSize: {
+              xs: "0.8em",
+              md: "1em",
+            },
+            // color: "secondary.main",
+          }}
+        >
           Lorem ipsum dolor sit amet, consectetur
           adipisicing elit. Reprehenderit itaque
           accusantium voluptates non, maiores quod omnis
@@ -112,75 +119,208 @@ export const Footer = () => {
       </Box>
 
       <Grid container spacing={2}>
-        <Grid>
-          <Box>
-            <Typography variant="span" color="initial">
-              Info Links
-            </Typography>
+        {/* <Grid
+          size={{
+            xs: 6,
+            md: 4,
+          }}
+        > */}
+        <Grid size={{ xs: 6, sm: 4 }}>
+          <Typography variant="span">
+            Info Links
+          </Typography>
 
-            <List
-            // dense={dense}
+          <List
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}
+          >
+            {footerQuickLinks.map((item) => (
+              <Link key={item.display} href={item.url}>
+                <ListItem
+                  key={item.display}
+                  sx={{
+                    p: 0,
+                  }}
+                >
+                  <ListItemText
+                    sx={{
+                      // p: 0,
+                      m: 0,
+                    }}
+                  >
+                    <Typography
+                      // variant="body2"
+                      // component="span"
+                      sx={{
+                        fontSize: {
+                          xs: "0.8em",
+                          md: "1em",
+                        },
+                        color: "primary.contrast",
+                      }}
+                    >
+                      {item.display}
+                    </Typography>
+                  </ListItemText>
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+        </Grid>
+        <Grid size={{ xs: 6, sm: 4 }}>
+          <Typography variant="span" color="initial">
+            Quick Links
+          </Typography>
+
+          <List
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}
+          >
+            {footerLinks.map((item) => (
+              <Link key={item.display} href={item.url}>
+                <ListItem
+                  key={item.display}
+                  sx={{
+                    p: 0,
+                  }}
+                >
+                  <ListItemText
+                    sx={{
+                      m: 0,
+                    }}
+                  >
+                    <Typography
+                      // variant="body2"
+                      // component="span"
+                      sx={{
+                        fontSize: {
+                          xs: "0.8em",
+                          md: "1em",
+                        },
+                        color: "primary.contrast",
+                      }}
+                    >
+                      {item.display}
+                    </Typography>
+                  </ListItemText>
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+        </Grid>
+        <Grid size={{ xs: 6, sm: 4 }}>
+          <Typography variant="subtitle2">
+            Contact
+          </Typography>
+
+          <List
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}
+          >
+            <ListItem
+              sx={{
+                // display: "flex",
+                p: 0,
+              }}
             >
-              {footerQuickLinks.map((item) => (
-                <Link key={item.display} href={item.url}>
-                  <ListItem key={item.display}>
-                    <ListItemText
-                      primary={item.display}
-                      // secondary={true ? "Secondary text" : null}
-                    />
-                  </ListItem>
-                </Link>
-              ))}
-            </List>
-          </Box>
-          <Box>
-            <Typography variant="span" color="initial">
-              Quick Links
-            </Typography>
-
-            <List
-            // dense={dense}
-            >
-              {footerLinks.map((item) => (
-                <Link key={item.display} href={item.url}>
-                  <ListItem key={item.display}>
-                    <ListItemText
-                      primary={item.display}
-                      // secondary={true ? "Secondary text" : null}
-                    />
-                  </ListItem>
-                </Link>
-              ))}
-            </List>
-          </Box>
-          <Box>
-            <Typography variant="subtitle2">
-              Contact
-            </Typography>
-
-            <List>
-              <ListItem>
-                <ListItemText>
-                  <PlaceIcon />
+              <PlaceIcon
+                sx={
+                  {
+                    // width: "fitContent",
+                    // width: "100%",
+                    // bgcolor: "blue",
+                  }
+                }
+              />
+              <ListItemText
+                sx={{
+                  display: "flex",
+                  // flexDirection: "row",
+                  // flexWrap: "wrap",
+                  m: 0,
+                  // bgcolor: "red",
+                }}
+              >
+                <Typography
+                  // variant="body2"
+                  // component="span"
+                  sx={{
+                    fontSize: {
+                      xs: "0.8em",
+                      md: "1em",
+                    },
+                    color: "primary.contrast",
+                  }}
+                >
                   Sylhet, Bangladesh
-                </ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText>
-                  <EmailIcon />
+                </Typography>
+              </ListItemText>
+            </ListItem>
+            <ListItem
+              sx={{
+                p: 0,
+              }}
+            >
+              <EmailIcon />
+              <ListItemText
+                sx={{
+                  m: 0,
+                }}
+              >
+                <Typography
+                  // variant="body2"
+                  // component="span"
+                  sx={{
+                    fontSize: {
+                      xs: "0.8em",
+                      md: "1em",
+                    },
+                    color: "primary.contrast",
+                  }}
+                >
                   example@mail.ec
-                </ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText>
-                  <PhoneIcon />
+                </Typography>
+              </ListItemText>
+            </ListItem>
+            <ListItem
+              sx={{
+                p: 0,
+              }}
+            >
+              <PhoneIcon />
+              <ListItemText
+                sx={{
+                  m: 0,
+                }}
+              >
+                <Typography
+                  // variant="body2"
+                  // component="span"
+                  sx={{
+                    fontSize: {
+                      xs: "0.8em",
+                      md: "1em",
+                    },
+                    color: "primary.contrast",
+                  }}
+                >
                   +593 0984233620
-                </ListItemText>
-              </ListItem>
-            </List>
-          </Box>
+                </Typography>
+              </ListItemText>
+            </ListItem>
+          </List>
         </Grid>
       </Grid>
+      {/* </Grid> */}
     </Box>
   );
 };
