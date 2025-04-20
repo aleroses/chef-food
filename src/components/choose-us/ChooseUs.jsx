@@ -12,6 +12,7 @@ import { chooseUs } from "../../assets/fake-data/choose-us";
 export const ChooseUs = () => {
   return (
     <Box
+      id="about"
       component="article"
       sx={{
         width: "82%",

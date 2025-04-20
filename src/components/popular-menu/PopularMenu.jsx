@@ -14,6 +14,7 @@ export const PopularMenu = () => {
 
   return (
     <Box
+      id="recipes"
       component="article"
       sx={{
         width: "82%",

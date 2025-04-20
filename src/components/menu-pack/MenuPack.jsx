@@ -59,6 +59,7 @@ export const MenuPack = () => {
 
   return (
     <Box
+      id="menu"
       component="section"
       sx={{
         width: "82%",

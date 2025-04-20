@@ -12,6 +12,7 @@ export const NavListDrawer = ({
   searchValue,
   onSearchChange,
   onSearchSubmit,
+  onLinkClick,
 }) => {
   return (
     <Box
@@ -27,10 +28,16 @@ export const NavListDrawer = ({
       <nav>
         <List>
           {navLinks.map((item) => (
-            <ListItem key={item.title} disablePadding>
+            <ListItem
+              key={item.title}
+              // href={item.path}
+              disablePadding
+            >
               <ListItemButton
                 component="a"
-                href={item.path}
+                // href={item.path}
+                // onClick={toggleDrawer(item.path, true)}
+                onClick={() => onLinkClick(item.path)}
                 sx={{
                   "&:hover, &:focus": {
                     color: "accent.light",

@@ -24,7 +24,7 @@ import { SearchInput } from "./SearchInput";
 const navLinks = [
   {
     title: "Home",
-    path: "#",
+    path: "#header",
     icon: <InboxIcon />,
   },
   {
@@ -61,6 +61,14 @@ export const Navbar = () => {
     e.preventDefault();
     // Lógica de búsqueda aquí
     console.log("Buscar:", searchValue);
+  };
+
+  const handleNavLinkClick = (id) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setOpen(false); // cerrar el drawer
+    }
   };
 
   return (
@@ -166,6 +174,7 @@ export const Navbar = () => {
           searchValue={searchValue}
           onSearchChange={handleSearchChange}
           onSearchSubmit={handleSearchSubmit}
+          onLinkClick={handleNavLinkClick}
         />
       </Drawer>
     </>

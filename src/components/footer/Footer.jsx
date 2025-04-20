@@ -59,6 +59,7 @@ const footerLinks = [
 export const Footer = () => {
   return (
     <Box
+      id="contact"
       sx={{
         width: "100%",
         // display: {
