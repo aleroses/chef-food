@@ -20,28 +20,46 @@ export const DownloadApp = () => {
   return (
     <Box
       sx={{
-        width: "100%",
+        width: {
+          sm: "100%",
+          md: "82%",
+        },
         display: "flex",
+        justifySelf: "center",
         justifyContent: "center",
-        // justifySelf: "center",
+        // justifyItems: "center",
+        // alignSelf: "center",
         bgcolor: "accent.main",
-        mb: 4,
+        borderRadius: { xs: "1rem", sm: "1.5rem" },
+        mb: 8,
       }}
     >
       <Card
         elevation={0}
         sx={{
           width: "100%",
-          maxWidth: "800px",
+          maxWidth: "900px",
           display: "flex",
           flexDirection: {
             xs: "column",
             sm: "row",
           },
-          // justifyItems: "center",
           bgcolor: "accent.main",
           // gap: 2,
-          pb: 2.2,
+          borderRadius: { xs: "1rem", sm: "1.5rem" },
+          pb: {
+            xs: 2.2,
+          },
+          py: {
+            sm: 2,
+            // lg: 0,
+          },
+          mr: {
+            md: 2,
+          },
+          columnGap: {
+            lg: 8,
+          },
         }}
       >
         <CardMedia
@@ -50,6 +68,7 @@ export const DownloadApp = () => {
           sx={{
             width: {
               sm: "50%",
+              // lg: "80%",
             },
 
             maxWidth: "400px",
@@ -65,7 +84,6 @@ export const DownloadApp = () => {
             },
             display: "flex",
             flexDirection: "column",
-            // justifyContent: "center",
             alignSelf: "center",
             pr: {
               sm: 2,

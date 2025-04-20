@@ -17,7 +17,13 @@
 #root {
   /* background-color: #090b10; */
   background-color: #0f111a;
+  color-scheme: only light;
 }
+
+/* html {
+  forced-color-adjust: none;
+  -webkit-font-smoothing: antialiased;
+} */
 
 /* a {
   font-weight: 500;

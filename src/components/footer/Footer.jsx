@@ -60,330 +60,344 @@ export const Footer = () => {
   return (
     <Box
       sx={{
-        width: "82%",
-        display: {
-          md: "flex",
-        },
-        justifySelf: "center",
+        width: "100%",
+        // display: {
+        //   md: "flex",
+        // },
         // alignItems: "center",
         gap: { md: 2 },
-        mb: 2,
+        p: { xs: 2, md: 4 },
+        // mb: 2,
         // flexDirection: {
         //   md: "row",
         // },
+        bgcolor: "primary.main",
       }}
     >
       <Box
         sx={{
           width: {
-            md: "30%",
+            xs: "100%",
+            sm: "82%",
           },
-
-          mb: 2,
+          display: {
+            md: "flex",
+          },
+          justifySelf: "center",
         }}
       >
         <Box
           sx={{
-            display: "flex",
+            width: {
+              md: "30%",
+            },
+
             mb: 2,
           }}
         >
-          <RestaurantMenuIcon
+          <Box
             sx={{
-              // display: { xs: "none", md: "flex" },
               display: "flex",
-              alignSelf: "center",
-              mr: 1,
-            }}
-          />
-          <Typography
-            variant="h5"
-            sx={{
-              flexGrow: 1,
-              color: "accent.main",
-              fontWeight: 700,
-              pl: {
-                md: 1,
-              },
+              mb: 2,
             }}
           >
-            Chef Food
+            <RestaurantMenuIcon
+              sx={{
+                // display: { xs: "none", md: "flex" },
+                display: "flex",
+                alignSelf: "center",
+                mr: 1,
+              }}
+            />
+            <Typography
+              variant="h5"
+              sx={{
+                flexGrow: 1,
+                color: "accent.main",
+                fontWeight: 700,
+                pl: {
+                  md: 1,
+                },
+              }}
+            >
+              Chef Food
+            </Typography>
+          </Box>
+
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: {
+                xs: "0.8em",
+                // md: "1em",
+              },
+              // color: "secondary.main",
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Reprehenderit itaque
+            accusantium voluptates non, maiores quod omnis
+            corrupti, sequi libero ratione quas.
           </Typography>
         </Box>
 
-        <Typography
-          variant="body1"
+        <Grid
+          container
           sx={{
-            fontSize: {
-              xs: "0.8em",
-              md: "1em",
+            width: {
+              md: "70%",
             },
-            // color: "secondary.main",
+            ml: { md: 8 },
+            rowGap: 2,
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Reprehenderit itaque
-          accusantium voluptates non, maiores quod omnis
-          corrupti, sequi libero ratione quas.
-        </Typography>
-      </Box>
-
-      <Grid
-        container
-        sx={{
-          width: {
-            md: "70%",
-          },
-          ml: { md: 8 },
-          rowGap: 2,
-        }}
-      >
-        <Grid size={{ xs: 6, sm: 4 }}>
-          <Typography
-            variant="span"
-            sx={{
-              color: "accent.main",
-              fontWeight: "500",
-            }}
-          >
-            Info Links
-          </Typography>
-
-          <List
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
-          >
-            {footerQuickLinks.map((item) => (
-              <Link
-                key={item.display}
-                href={item.url}
-                sx={{
-                  textDecoration: "none",
-                }}
-              >
-                <ListItem
-                  key={item.display}
-                  sx={{
-                    p: 0,
-                  }}
-                >
-                  <ListItemText
-                    sx={{
-                      // p: 0,
-                      m: 0,
-                    }}
-                  >
-                    <Typography
-                      // variant="body2"
-                      // component="span"
-                      sx={{
-                        fontSize: {
-                          xs: "0.8em",
-                          md: "1em",
-                        },
-                        color: "primary.contrast",
-                      }}
-                    >
-                      {item.display}
-                    </Typography>
-                  </ListItemText>
-                </ListItem>
-              </Link>
-            ))}
-          </List>
-        </Grid>
-        <Grid size={{ xs: 6, sm: 4 }}>
-          <Typography
-            variant="span"
-            sx={{
-              color: "accent.main",
-              fontWeight: "500",
-            }}
-          >
-            Quick Links
-          </Typography>
-
-          <List
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
-          >
-            {footerLinks.map((item) => (
-              <Link
-                key={item.display}
-                href={item.url}
-                sx={{
-                  textDecoration: "none",
-                }}
-              >
-                <ListItem
-                  key={item.display}
-                  sx={{
-                    p: 0,
-                  }}
-                >
-                  <ListItemText
-                    sx={{
-                      m: 0,
-                    }}
-                  >
-                    <Typography
-                      // variant="body2"
-                      // component="span"
-                      sx={{
-                        fontSize: {
-                          xs: "0.8em",
-                          md: "1em",
-                        },
-                        color: "primary.contrast",
-                      }}
-                    >
-                      {item.display}
-                    </Typography>
-                  </ListItemText>
-                </ListItem>
-              </Link>
-            ))}
-          </List>
-        </Grid>
-        <Grid size={{ xs: 6, sm: 4 }}>
-          <Typography
-            variant="subtitle2"
-            sx={{
-              color: "accent.main",
-              fontWeight: "500",
-            }}
-          >
-            Contact
-          </Typography>
-
-          <List
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
-          >
-            <ListItem
+          <Grid size={{ xs: 6, sm: 4 }}>
+            <Typography
+              variant="span"
               sx={{
-                // display: "flex",
-                // color: "red",
-                display: "flex",
-                gap: 0.5,
-                p: 0,
+                color: "accent.main",
+                fontWeight: "500",
               }}
             >
-              <PlaceIcon
+              Info Links
+            </Typography>
+
+            <List
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+              }}
+            >
+              {footerQuickLinks.map((item) => (
+                <Link
+                  key={item.display}
+                  href={item.url}
+                  sx={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <ListItem
+                    key={item.display}
+                    sx={{
+                      p: 0,
+                    }}
+                  >
+                    <ListItemText
+                      sx={{
+                        // p: 0,
+                        m: 0,
+                      }}
+                    >
+                      <Typography
+                        // variant="body2"
+                        // component="span"
+                        sx={{
+                          fontSize: {
+                            xs: "0.8em",
+                            // md: "1em",
+                          },
+                          color: "primary.contrast",
+                        }}
+                      >
+                        {item.display}
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
+                </Link>
+              ))}
+            </List>
+          </Grid>
+          <Grid size={{ xs: 6, sm: 4 }}>
+            <Typography
+              variant="span"
+              sx={{
+                color: "accent.main",
+                fontWeight: "500",
+              }}
+            >
+              Quick Links
+            </Typography>
+
+            <List
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+              }}
+            >
+              {footerLinks.map((item) => (
+                <Link
+                  key={item.display}
+                  href={item.url}
+                  sx={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <ListItem
+                    key={item.display}
+                    sx={{
+                      p: 0,
+                    }}
+                  >
+                    <ListItemText
+                      sx={{
+                        m: 0,
+                      }}
+                    >
+                      <Typography
+                        // variant="body2"
+                        // component="span"
+                        sx={{
+                          fontSize: {
+                            xs: "0.8em",
+                            // md: "1em",
+                          },
+                          color: "primary.contrast",
+                        }}
+                      >
+                        {item.display}
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
+                </Link>
+              ))}
+            </List>
+          </Grid>
+          <Grid size={{ xs: 6, sm: 4 }}>
+            <Typography
+              variant="subtitle2"
+              sx={{
+                color: "accent.main",
+                fontWeight: "500",
+              }}
+            >
+              Contact
+            </Typography>
+
+            <List
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+              }}
+            >
+              <ListItem
                 sx={{
-                  fontSize: {
-                    xs: "1.2em",
-                    md: "1.5",
-                  },
+                  // display: "flex",
+                  // color: "red",
+                  display: "flex",
+                  gap: 0.5,
+                  p: 0,
                 }}
-              />
-              <ListItemText
+              >
+                <PlaceIcon
+                  sx={{
+                    fontSize: {
+                      xs: "1.2em",
+                      md: "1.5",
+                    },
+                  }}
+                />
+                <ListItemText
+                  sx={{
+                    display: "flex",
+                    // flexDirection: "row",
+                    // flexWrap: "wrap",
+                    m: 0,
+                    // bgcolor: "red",
+                  }}
+                >
+                  <Typography
+                    // variant="body2"
+                    // component="span"
+                    sx={{
+                      fontSize: {
+                        xs: "0.8em",
+                        // md: "1em",
+                      },
+                      color: "primary.contrast",
+                    }}
+                  >
+                    Sylhet, Bangladesh
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+              <ListItem
                 sx={{
                   display: "flex",
-                  // flexDirection: "row",
-                  // flexWrap: "wrap",
-                  m: 0,
-                  // bgcolor: "red",
+                  gap: 0.5,
+                  p: 0,
                 }}
               >
-                <Typography
-                  // variant="body2"
-                  // component="span"
+                <EmailIcon
                   sx={{
                     fontSize: {
-                      xs: "0.8em",
-                      md: "1em",
+                      xs: "1.2em",
+                      md: "1.5",
                     },
-                    color: "primary.contrast",
+                  }}
+                />
+                <ListItemText
+                  sx={{
+                    m: 0,
                   }}
                 >
-                  Sylhet, Bangladesh
-                </Typography>
-              </ListItemText>
-            </ListItem>
-            <ListItem
-              sx={{
-                display: "flex",
-                gap: 0.5,
-                p: 0,
-              }}
-            >
-              <EmailIcon
+                  <Typography
+                    // variant="body2"
+                    // component="span"
+                    sx={{
+                      fontSize: {
+                        xs: "0.8em",
+                        // md: "1em",
+                      },
+                      color: "primary.contrast",
+                    }}
+                  >
+                    example@mail.ec
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+              <ListItem
                 sx={{
-                  fontSize: {
-                    xs: "1.2em",
-                    md: "1.5",
-                  },
-                }}
-              />
-              <ListItemText
-                sx={{
-                  m: 0,
+                  display: "flex",
+                  gap: 0.5,
+                  p: 0,
                 }}
               >
-                <Typography
-                  // variant="body2"
-                  // component="span"
+                <PhoneIcon
                   sx={{
                     fontSize: {
-                      xs: "0.8em",
-                      md: "1em",
+                      xs: "1.2em",
+                      md: "1.5",
                     },
-                    color: "primary.contrast",
+                    // mr: 0.5,
                   }}
-                >
-                  example@mail.ec
-                </Typography>
-              </ListItemText>
-            </ListItem>
-            <ListItem
-              sx={{
-                display: "flex",
-                gap: 0.5,
-                p: 0,
-              }}
-            >
-              <PhoneIcon
-                sx={{
-                  fontSize: {
-                    xs: "1.2em",
-                    md: "1.5",
-                  },
-                  // mr: 0.5,
-                }}
-              />
-              <ListItemText
-                sx={{
-                  m: 0,
-                }}
-              >
-                <Typography
-                  // variant="body2"
-                  // component="span"
+                />
+                <ListItemText
                   sx={{
-                    fontSize: {
-                      xs: "0.8em",
-                      md: "1em",
-                    },
-                    color: "primary.contrast",
+                    m: 0,
                   }}
                 >
-                  +593 0984233620
-                </Typography>
-              </ListItemText>
-            </ListItem>
-          </List>
+                  <Typography
+                    // variant="body2"
+                    // component="span"
+                    sx={{
+                      fontSize: {
+                        xs: "0.8em",
+                        // md: "1em",
+                      },
+                      color: "primary.contrast",
+                    }}
+                  >
+                    +593 0984233620
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+            </List>
+          </Grid>
         </Grid>
-      </Grid>
+      </Box>
     </Box>
   );
 };
