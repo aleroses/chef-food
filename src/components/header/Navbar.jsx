@@ -65,20 +65,45 @@ export const Navbar = () => {
 
   const handleNavLinkClick = (id) => {
     const element = document.querySelector(id);
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -64;
+      const y =
+        element.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+
+      // Example:
+      // Tu elemento está 300px más abajo de la parte visible → getBoundingClientRect().top = 300
+      // Has hecho scroll de 200px hacia abajo → window.pageYOffset = 200
+      // Offset es -64 (navbar fijo) → yOffset = -64
+      // y = 300 + 200 + (-64) = 436
+
+      // console.log(element);
+      // console.log(element.getBoundingClientRect());
+      // console.log(element.getBoundingClientRect().top);
+      // console.log(window.pageYOffset);
+      // console.log(y);
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+      // element.scrollIntoView({ behavior: "smooth" });
       setOpen(false); // cerrar el drawer
     }
   };
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar
+        position="fixed"
+        component="nav"
+        // sx={{ display: "flex" }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
             size="large"
             aria-label=""
+            edge="start"
             onClick={() => setOpen(true)}
             sx={{
               display: { xs: "flex", md: "none" },
@@ -111,7 +136,10 @@ export const Navbar = () => {
               <Button
                 key={item.title}
                 component="a"
-                href={item.path}
+                // href={item.path}
+                onClick={() =>
+                  handleNavLinkClick(item.path)
+                }
                 color="inherit"
                 sx={{
                   "&:hover, &:focus": {

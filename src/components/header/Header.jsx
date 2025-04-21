@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Toolbar } from "@mui/material";
 import { Navbar } from "./Navbar";
 
 export const Header = () => {
@@ -6,9 +6,13 @@ export const Header = () => {
     <Grid
       id="header"
       component="header"
-      // sx={{ m: 5 }}
+      sx={{
+        // display: "flex",
+        // mb: 10
+      }}
     >
       <Navbar />
+      <Toolbar />
     </Grid>
   );
 };
